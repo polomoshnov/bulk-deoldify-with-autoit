@@ -17,3 +17,6 @@ wget https://github.com/ColorfulSoft/DeOldify.NET/releases/download/Weights/Arti
 Then go to `DeOldify.NET\Implementation` and double-click `Compile.artistic.simd.float.bat`.
 
 Finally, go to `DeOldify.NET\Implementation\Release` and grab the exe file.
+
+## Binary Included
+If you don't need to build DeOldify by yourself you can just download the exe file at the following address: https://github.com/polomoshnov/bulk-deoldify-with-autoit/releases/download/v1.0.0/DeOldify.NET.artistic.windows.simd.w32.exe
