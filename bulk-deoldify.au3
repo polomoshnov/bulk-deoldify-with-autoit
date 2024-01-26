@@ -1,6 +1,7 @@
 #include <Array.au3>
 #include <File.au3>
 #include <WinAPIFiles.au3>
+#include <WinAPI.au3>
 
 ; these are copy-and-paste lines for testing purposes
 ;_ArrayDisplay($arr, "alert")
@@ -64,9 +65,12 @@ Func deOldify($filename)
 	MouseMove ($posMainWnd[0] + 280, $posMainWnd[1] + 355)
 	MouseClick("left")
 
+	; get the control that is under the cursor
+	$ctrl = _WinAPI_WindowFromPoint(_WinAPI_GetMousePos())
+
 	; wait for the deoldifying process to complete, that is, when the button's text gets changeed to "Done!"
 	While 1
-		$var = ControlGetText($wndMain, "", "[CLASS:WindowsForms10.Window.8.app.0.34f5582_r8_ad1; INSTANCE:6]")
+		$var = ControlGetText($wndMain, "", $ctrl)
 		Sleep(1000)
 		If $var = "Done!" Then 
 			ExitLoop
